@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,6 +24,7 @@ public class PrimerActivity extends AppCompatActivity implements AdapterView.OnI
     Spinner spORTime;
     Spinner spLosAnticipated;
     TextView tvMents;
+    int ments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,15 @@ public class PrimerActivity extends AppCompatActivity implements AdapterView.OnI
         spLosAnticipated.setAdapter(adapter1);
         spLosAnticipated.setOnItemSelectedListener(this);
 
+        // Manejador eventos botón Next
+        findViewById(R.id.btnNext).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SegundoActivity.class);
+                intent.putExtra("ments", ments);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -74,6 +85,7 @@ public class PrimerActivity extends AppCompatActivity implements AdapterView.OnI
         for (i = 0;i < 7;i++){
             total += valoresSpinners[i];
         }
+        ments = total;
         tvMents.setText(Integer.toString(total));
     }
 }
