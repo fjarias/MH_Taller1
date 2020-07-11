@@ -29,4 +29,23 @@
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <activity
+        android:id="@+id/primerActivity"
+        android:name="com.example.myapplication.PrimerActivity"
+        android:label="activity_primer"
+        tools:layout="@layout/activity_primer" >
+        <action
+            android:id="@+id/action_primerActivity_to_segundoActivity"
+            app:destination="@id/segundoActivity" />
+    </activity>
+    <activity
+        android:id="@+id/segundoActivity"
+        android:name="com.example.myapplication.SegundoActivity"
+        android:label="activity_segundo"
+        tools:layout="@layout/activity_segundo" >
+        <argument
+            android:name="ments1_2"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </activity>
 </navigation>
