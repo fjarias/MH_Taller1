@@ -23,6 +23,15 @@ public class PrimerActivity extends AppCompatActivity implements AdapterView.OnI
     static final String[] surgicalSite = new String[] {"none of the following","adbominopelvic MIS surgery","abdominopelvic Open Surgery (infraumbilical)","abdominopelvic Open Surgery (supraumbilical)","OHNS/Upper GI/Thoracic"};
     Spinner spORTime;
     Spinner spLosAnticipated;
+    Spinner spPostOPICU;
+    Spinner spBleeding;
+    Spinner spSurgicalSize;
+    Spinner spIntubation;
+    Spinner spSurgicalSite;
+
+
+
+
     TextView tvMents;
     int ments;
 
@@ -40,6 +49,11 @@ public class PrimerActivity extends AppCompatActivity implements AdapterView.OnI
         tvMents = findViewById(R.id.tvMents);
         spORTime = findViewById(R.id.spORTime);
         spLosAnticipated = findViewById(R.id.spLosAnticipated);
+        spPostOPICU=findViewById(R.id.spPostOpICU);
+        spBleeding=findViewById(R.id.spBleeding);
+        spSurgicalSize=findViewById(R.id.spSurgicalSize);
+        spIntubation=findViewById(R.id.spIntubation);
+        spSurgicalSite=findViewById(R.id.spSurgicalSite);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, orTime);
         spORTime.setAdapter(adapter);
@@ -48,6 +62,28 @@ public class PrimerActivity extends AppCompatActivity implements AdapterView.OnI
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, losAnticipated);
         spLosAnticipated.setAdapter(adapter1);
         spLosAnticipated.setOnItemSelectedListener(this);
+
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, postOpICU);
+        spPostOPICU.setAdapter(adapter2);
+        spPostOPICU.setOnItemSelectedListener(this);
+
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, bleedingRisk);
+        spBleeding.setAdapter(adapter3);
+        spBleeding.setOnItemSelectedListener(this);
+
+        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, surgicalSize);
+        spSurgicalSize.setAdapter(adapter4);
+        spSurgicalSize.setOnItemSelectedListener(this);
+
+        ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, intubation);
+        spIntubation.setAdapter(adapter5);
+        spIntubation.setOnItemSelectedListener(this);
+
+        ArrayAdapter<String> adapter6 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, surgicalSite);
+        spSurgicalSite.setAdapter(adapter6);
+        spSurgicalSite.setOnItemSelectedListener(this);
+
+
 
         // Manejador eventos botón Next
         findViewById(R.id.btnNext).setOnClickListener(new View.OnClickListener() {
@@ -69,6 +105,21 @@ public class PrimerActivity extends AppCompatActivity implements AdapterView.OnI
                 break;
             case R.id.spLosAnticipated:
                 valoresSpinners[1] = pos + 1;
+                break;
+            case R.id.spPostOpICU:
+                valoresSpinners[2] = pos + 1;
+                break;
+            case R.id.spBleeding:
+                valoresSpinners[3] = pos + 1;
+                break;
+            case R.id.spSurgicalSize:
+                valoresSpinners[4] = pos + 1;
+                break;
+            case R.id.spIntubation:
+                valoresSpinners[5] = pos + 1;
+                break;
+            case R.id.spSurgicalSite:
+                valoresSpinners[6] = pos + 1;
                 break;
         }
         sumarParametros();
