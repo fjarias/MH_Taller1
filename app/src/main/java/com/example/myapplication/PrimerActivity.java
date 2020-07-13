@@ -29,9 +29,6 @@ public class PrimerActivity extends AppCompatActivity implements AdapterView.OnI
     Spinner spIntubation;
     Spinner spSurgicalSite;
 
-
-
-
     TextView tvMents;
     int ments;
 
@@ -39,6 +36,8 @@ public class PrimerActivity extends AppCompatActivity implements AdapterView.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_primer);
+
+        setTitle("MeNTS Calculator");
 
         valoresSpinners = new int[7];
         int i;
@@ -82,7 +81,6 @@ public class PrimerActivity extends AppCompatActivity implements AdapterView.OnI
         ArrayAdapter<String> adapter6 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, surgicalSite);
         spSurgicalSite.setAdapter(adapter6);
         spSurgicalSite.setOnItemSelectedListener(this);
-
 
 
         // Manejador eventos botón Next

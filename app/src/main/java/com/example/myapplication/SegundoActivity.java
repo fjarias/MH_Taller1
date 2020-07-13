@@ -37,6 +37,8 @@ public class SegundoActivity extends AppCompatActivity implements AdapterView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_segundo);
 
+        setTitle("MeNTS Calculator");
+
         valoresSpinners = new int[6];
         int i;
         for (i = 0;i < 6;i++) {
@@ -83,6 +85,16 @@ public class SegundoActivity extends AppCompatActivity implements AdapterView.On
        ments2 = message;
         //text.setText(Integer.toString(message));
         //suma=extras.getInt("suma");
+
+        // Manejador eventos botón Next
+        findViewById(R.id.btnNext).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), TercerActivity.class);
+                intent.putExtra("ments", ments3);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

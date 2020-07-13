@@ -47,5 +47,17 @@
             android:name="ments1_2"
             app:argType="integer"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/action_segundoActivity_to_tercerActivity"
+            app:destination="@id/tercerActivity" />
+    </activity>
+    <activity
+        android:id="@+id/tercerActivity"
+        android:name="com.example.myapplication.TercerActivity"
+        android:label="activity_tercer"
+        tools:layout="@layout/activity_tercer" >
+        <action
+            android:id="@+id/action_tercerActivity_to_primerActivity"
+            app:destination="@id/primerActivity" />
     </activity>
 </navigation>
