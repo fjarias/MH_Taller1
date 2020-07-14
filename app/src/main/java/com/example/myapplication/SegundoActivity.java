@@ -95,6 +95,15 @@ public class SegundoActivity extends AppCompatActivity implements AdapterView.On
                 startActivity(intent);
             }
         });
+
+        // Manejador eventos botón Reset
+        findViewById(R.id.btnReset).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), PrimerActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -91,7 +91,7 @@ public class TercerActivity extends AppCompatActivity implements AdapterView.OnI
         Bundle extras = getIntent().getExtras();
         ments2 = extras.getInt("ments");
 
-        // Manejador eventos botón Next
+        // Manejador eventos botón Reset
         findViewById(R.id.btnReset).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
